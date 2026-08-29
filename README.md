@@ -1,5 +1,7 @@
 # Immune Cell Trial Analysis
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/aryabro/cell-count)
+
 ## Database schema
 
 The source CSV contains project, subject, sample, treatment, response, and immune cell count information in a single wide table. I normalized this data into five SQLite tables:
@@ -226,7 +228,7 @@ responder sample count
 non-responder sample count
 responder subject count
 non-responder subject count
-response effect
+response effect (percentage points)
 p-value
 significant
 ```
@@ -323,7 +325,7 @@ Contains the responder versus non-responder analysis.
 - queries the required clinical subset
 - calculates relative frequencies
 - fits one mixed-effects model per immune population
-- reports response effect sizes and p-values
+- reports response effect (percentage points) sizes and p-values
 
 `create_response_boxplot()` creates the responder/non-responder population boxplots.
 
