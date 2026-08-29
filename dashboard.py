@@ -186,7 +186,7 @@ with part_3:
         st.warning("Select at least one value in every filter.")
     else:
         with st.spinner("Calculating statistics and boxplots..."):
-            response_df, stats_df = response_analysis(*filters)
+            response_df, stats_df = response_analysis(filters)
             figure = create_response_boxplot(
                 response_df,
                 condition=filters[0],
@@ -211,7 +211,7 @@ with part_4:
         st.warning("Select at least one value in every filter.")
     else:
         with st.spinner("Loading sample subset..."):
-            subset_df, summary_df = subset_analysis(*filters)
+            subset_df, summary_df = subset_analysis(filters)
         samples, subjects = st.columns(2)
         samples.metric("Matching samples", f"{subset_df['sample'].nunique():,}")
         subjects.metric("Subjects", f"{subset_df['subject'].nunique():,}")
